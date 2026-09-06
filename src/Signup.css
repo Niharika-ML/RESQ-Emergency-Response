@@ -1,0 +1,161 @@
+.signup-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff5f5, #ffffff);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+    position: relative;
+}
+
+.signup-back {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+
+    border: none;
+    background: white;
+
+    padding: 11px 18px;
+    border-radius: 8px;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.signup-card {
+    width: 650px;
+    max-width: 100%;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.signup-logo {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    background: #fee2e2;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.signup-card h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.signup-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #dc2626;
+}
+
+.signup-main-btn {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #dc2626;
+    color: white;
+
+    font-weight: 800;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.signup-main-btn:hover {
+    background: #b91c1c;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 22px;
+    color: #6b7280;
+}
+
+.login-link button {
+    border: none;
+    background: none;
+
+    color: #dc2626;
+    font-weight: 800;
+
+    margin-left: 6px;
+
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .signup-card {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .signup-back {
+        top: 10px;
+        left: 10px;
+    }
+}

@@ -1,0 +1,833 @@
+* {
+    box-sizing: border-box;
+}
+
+.ambulances-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    color: #172033;
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.ambulances-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e8ebf1;
+    padding: 28px 48px;
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    align-items: center;
+    gap: 28px;
+}
+
+.back-button {
+    border: 1px solid #e1e5ec;
+    background: #ffffff;
+    color: #283348;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.back-button:hover {
+    background: #f5f7fb;
+    transform: translateX(-2px);
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1f1;
+    font-size: 31px;
+    border: 1px solid #ffdcdc;
+}
+
+.eyebrow {
+    margin: 0 0 5px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #e33b42;
+}
+
+.ambulances-header h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: -0.7px;
+}
+
+.header-description {
+    margin: 6px 0 0;
+    color: #727b8e;
+    font-size: 14px;
+}
+
+.location-pill {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #f7f9fc;
+    border: 1px solid #e6eaf0;
+    border-radius: 999px;
+    padding: 10px 15px;
+    color: #596377;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.location-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #aab1bd;
+}
+
+.location-dot.active {
+    background: #20a866;
+    box-shadow: 0 0 0 4px rgba(32, 168, 102, 0.12);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.ambulances-content {
+    width: min(1240px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 35px 0 50px;
+}
+
+/* =========================
+   EMERGENCY BANNER
+========================= */
+
+.emergency-banner {
+    background: linear-gradient(110deg, #fff5f5, #ffffff);
+    border: 1px solid #ffdede;
+    border-radius: 20px;
+    padding: 24px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 18px;
+}
+
+.banner-left {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.warning-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    border: 1px solid #ffe0e0;
+}
+
+.banner-label {
+    color: #e13b42;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+}
+
+.emergency-banner h2 {
+    margin: 4px 0;
+    font-size: 19px;
+}
+
+.emergency-banner p {
+    margin: 0;
+    color: #727b8e;
+    font-size: 13px;
+}
+
+.call-108-button {
+    border: 0;
+    background: #e53940;
+    color: #fff;
+    border-radius: 12px;
+    padding: 13px 19px;
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(229, 57, 64, 0.2);
+    transition: 0.2s ease;
+}
+
+.call-108-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(229, 57, 64, 0.25);
+}
+
+/* =========================
+   LOCATION CARD
+========================= */
+
+.current-location-card {
+    background: #ffffff;
+    border: 1px solid #e6eaf0;
+    border-radius: 16px;
+    padding: 17px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 37px;
+}
+
+.location-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #f0f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+}
+
+.location-details span {
+    color: #8790a1;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.location-details strong {
+    font-size: 13px;
+    color: #303a4d;
+}
+
+.open-map-button {
+    border: 0;
+    background: transparent;
+    color: #e13b42;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.ambulances-toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 21px;
+}
+
+.section-label {
+    margin: 0 0 5px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+    color: #e13b42;
+}
+
+.ambulances-toolbar h2 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: -0.4px;
+}
+
+.ambulances-toolbar p:last-child {
+    margin: 5px 0 0;
+    color: #8790a1;
+    font-size: 13px;
+}
+
+.search-box {
+    width: 300px;
+    height: 46px;
+    background: #ffffff;
+    border: 1px solid #e1e5ec;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 9px;
+}
+
+.search-box span {
+    font-size: 22px;
+    color: #8a93a4;
+}
+
+.search-box input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 13px;
+    color: #253047;
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #a0a7b3;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.ambulance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.ambulance-card {
+    background: #ffffff;
+    border: 1px solid #e4e8ef;
+    border-radius: 19px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(25, 38, 64, 0.04);
+    transition: 0.25s ease;
+}
+
+.ambulance-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(25, 38, 64, 0.08);
+    border-color: #d8dde6;
+}
+
+.ambulance-card.requested {
+    border-color: #9edbbd;
+    box-shadow: 0 12px 28px rgba(32, 168, 102, 0.08);
+}
+
+/* =========================
+   CARD TOP
+========================= */
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.ambulance-visual {
+    width: 57px;
+    height: 57px;
+    border-radius: 16px;
+    background: #f7f8fb;
+    border: 1px solid #e8ebf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #20965d;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.green-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #25ae69;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.ambulance-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.ambulance-title h3 {
+    margin: 0;
+    font-size: 17px;
+    color: #1d2739;
+}
+
+.ambulance-title p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #858e9e;
+    font-weight: 600;
+}
+
+.type-badge {
+    height: fit-content;
+    padding: 6px 9px;
+    background: #f5f6f9;
+    border-radius: 8px;
+    color: #687286;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+/* =========================
+   DRIVER
+========================= */
+
+.driver-section {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 18px;
+    padding-top: 17px;
+    border-top: 1px solid #edf0f4;
+}
+
+.driver-avatar {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background: #202b3f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.driver-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.driver-details span {
+    font-size: 9px;
+    color: #9aa2b0;
+    font-weight: 900;
+    letter-spacing: 0.7px;
+}
+
+.driver-details strong {
+    font-size: 13px;
+    color: #293348;
+}
+
+.driver-details small {
+    font-size: 10px;
+    color: #e59a25;
+}
+
+.call-driver {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid #dfe4eb;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.call-driver:hover {
+    background: #f5f7fa;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #f8f9fb;
+    border-radius: 11px;
+    padding: 10px;
+}
+
+.stat-icon {
+    font-size: 15px;
+}
+
+.stat div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat small {
+    color: #8d95a4;
+    font-size: 9px;
+}
+
+.stat strong {
+    color: #283348;
+    font-size: 12px;
+}
+
+/* =========================
+   EQUIPMENT
+========================= */
+
+.equipment {
+    margin-top: 12px;
+    padding: 9px 10px;
+    background: #f5faf7;
+    border-radius: 9px;
+    color: #43815e;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.equipment span {
+    margin-right: 5px;
+    color: #21a265;
+}
+
+/* =========================
+   HOSPITAL
+========================= */
+
+.hospital-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 0;
+}
+
+.hospital-row>span {
+    font-size: 16px;
+}
+
+.hospital-row div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hospital-row small {
+    color: #979eaa;
+    font-size: 9px;
+}
+
+.hospital-row strong {
+    color: #424c5e;
+    font-size: 10px;
+}
+
+/* =========================
+   REQUEST BUTTON
+========================= */
+
+.request-button {
+    width: 100%;
+    border: 0;
+    background: #e43b42;
+    color: white;
+    border-radius: 11px;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.2s ease;
+}
+
+.request-button:hover {
+    background: #cf3037;
+    transform: translateY(-1px);
+}
+
+.request-button span {
+    font-size: 16px;
+}
+
+/* =========================
+   ROUTE BUTTON
+========================= */
+
+.route-button {
+    width: 100%;
+    margin-top: 8px;
+    border: 1px solid #e0e4ea;
+    background: #ffffff;
+    color: #4d586c;
+    border-radius: 11px;
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.route-button:hover {
+    background: #f7f8fa;
+    border-color: #d4d9e2;
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+.request-success {
+    background: #effaf4;
+    border: 1px solid #c8ecd8;
+    border-radius: 11px;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.success-icon {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: #22a965;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.request-success div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.request-success strong {
+    font-size: 11px;
+    color: #25754b;
+}
+
+.request-success span {
+    font-size: 9px;
+    color: #6c9a7e;
+}
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e9ef;
+    border-radius: 18px;
+    padding: 45px 20px;
+}
+
+.no-results div {
+    font-size: 40px;
+}
+
+.no-results h3 {
+    margin: 12px 0 5px;
+}
+
+.no-results p {
+    color: #818a9b;
+    font-size: 13px;
+}
+
+/* =========================
+   SAFETY
+========================= */
+
+.safety-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 28px;
+}
+
+.safety-card {
+    background: #ffffff;
+    border: 1px solid #e5e9ef;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    gap: 13px;
+}
+
+.safety-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    background: #f5f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.safety-card h3 {
+    margin: 0 0 4px;
+    font-size: 13px;
+}
+
+.safety-card p {
+    margin: 0;
+    color: #7f8899;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.ambulance-footer {
+    border-top: 1px solid #e6e9ef;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    color: #8a92a1;
+    font-size: 11px;
+}
+
+.ambulance-footer strong {
+    color: #e13b42;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+
+    .ambulances-header {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .location-pill {
+        width: fit-content;
+    }
+
+    .ambulance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+
+    .ambulances-header {
+        padding: 22px 18px;
+    }
+
+    .ambulances-content {
+        width: calc(100% - 28px);
+        padding-top: 22px;
+    }
+
+    .header-main {
+        align-items: flex-start;
+    }
+
+    .ambulances-header h1 {
+        font-size: 25px;
+    }
+
+    .emergency-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .call-108-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .current-location-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .open-map-button {
+        margin-left: 56px;
+    }
+
+    .ambulances-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .ambulance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .safety-section {
+        grid-template-columns: 1fr;
+    }
+
+    .ambulance-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}

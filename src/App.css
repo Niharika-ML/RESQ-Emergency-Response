@@ -1,0 +1,686 @@
+/* =========================================================
+   RESQ INNER PAGES
+========================================================= */
+
+.resq-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 42px 55px 70px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(237, 28, 36, 0.06), transparent 30%),
+    #f5f7fb;
+  color: #0b1736;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.resq-page * {
+  box-sizing: border-box;
+}
+
+.resq-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e1e6ef;
+  background: #ffffff;
+  color: #17233f;
+  padding: 11px 17px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+  transition: 0.2s ease;
+  margin-bottom: 32px;
+}
+
+.resq-back-button:hover {
+  transform: translateX(-2px);
+  border-color: #ed1c24;
+  color: #ed1c24;
+}
+
+
+/* =========================================================
+   PAGE HERO
+========================================================= */
+
+.page-hero {
+  max-width: 1250px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.page-hero-icon {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #fff0f1;
+  font-size: 32px;
+  box-shadow: 0 8px 25px rgba(237, 28, 36, 0.08);
+}
+
+.page-label {
+  display: block;
+  color: #ed1c24;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px;
+}
+
+.page-hero h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+.page-hero p {
+  margin: 9px 0 0;
+  color: #66748f;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.page-card {
+  max-width: 1250px;
+  margin: 0 auto 24px;
+  background: #ffffff;
+  border: 1px solid #e8ecf2;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+}
+
+.page-card h2 {
+  margin: 4px 0 0;
+  font-size: 23px;
+}
+
+.card-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.available-count {
+  background: #eafaf0;
+  color: #15803d;
+  border: 1px solid #ccefd8;
+  padding: 8px 13px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-button {
+  border: none;
+  background: #ed1c24;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.primary-button:hover {
+  background: #d9161d;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(237, 28, 36, 0.2);
+}
+
+.outline-button {
+  border: 1px solid #dce2eb;
+  background: #ffffff;
+  color: #263452;
+  padding: 11px 17px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.outline-button:hover {
+  border-color: #ed1c24;
+  color: #ed1c24;
+}
+
+.large-button {
+  padding: 14px 23px;
+  font-size: 14px;
+}
+
+.full-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   SUCCESS CARD
+========================================================= */
+
+.success-card {
+  max-width: 1250px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 20px;
+  background: #effbf3;
+  border: 1px solid #ccebd5;
+  border-radius: 15px;
+  color: #14532d;
+}
+
+.success-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #22c55e;
+  color: white;
+  font-weight: 900;
+}
+
+.success-card p {
+  margin: 4px 0 0;
+  color: #4b6b57;
+  font-size: 13px;
+}
+
+.close-small {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   AMBULANCES
+========================================================= */
+
+.ambulance-list {
+  display: grid;
+  gap: 14px;
+}
+
+.ambulance-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 21px;
+  border: 1px solid #e8ecf2;
+  border-radius: 16px;
+  background: #fbfcfe;
+  transition: 0.2s ease;
+}
+
+.ambulance-card:hover {
+  border-color: #f2b7ba;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+}
+
+.ambulance-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ambulance-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: #fff0f1;
+  border-radius: 14px;
+  font-size: 27px;
+}
+
+.ambulance-info h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.ambulance-info p {
+  margin: 0 0 9px;
+  color: #6b7890;
+  font-size: 13px;
+}
+
+.ambulance-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.ambulance-meta span {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  padding: 6px 9px;
+  border-radius: 8px;
+  color: #53617a;
+  font-size: 12px;
+}
+
+.ambulance-actions {
+  display: flex;
+  gap: 9px;
+}
+
+
+/* =========================================================
+   EMERGENCY ROUTE
+========================================================= */
+
+.route-card {
+  max-width: 1250px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff, #fff9f9);
+  border: 1px solid #ece8e9;
+  border-radius: 24px;
+  padding: 42px;
+  display: flex;
+  align-items: center;
+  gap: 65px;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.07);
+}
+
+.route-visual {
+  width: 190px;
+  min-width: 190px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-circle {
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff0f1;
+  border: 5px solid #ffffff;
+  box-shadow: 0 5px 20px rgba(237, 28, 36, 0.18);
+  font-size: 25px;
+  z-index: 2;
+}
+
+.hospital-circle {
+  background: #eef4ff;
+}
+
+.route-line {
+  width: 4px;
+  height: 90px;
+  border-left: 4px dashed #ed1c24;
+}
+
+.route-content {
+  max-width: 650px;
+}
+
+.route-content h2 {
+  font-size: 30px;
+  margin: 8px 0 12px;
+}
+
+.route-content p {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   MEDICINE SEARCH
+========================================================= */
+
+.medicine-search {
+  max-width: 1250px;
+  margin: 0 auto 22px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  border-radius: 15px;
+  padding: 0 18px;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.05);
+}
+
+.medicine-search span {
+  font-size: 19px;
+}
+
+.medicine-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #17233f;
+}
+
+.medicine-search input::placeholder {
+  color: #9aa5b8;
+}
+
+
+/* =========================================================
+   MEDICINE LAYOUT
+========================================================= */
+
+.medicine-layout {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.medicine-layout .page-card {
+  margin: 0;
+}
+
+.medicine-list {
+  display: grid;
+  gap: 10px;
+}
+
+.medicine-product {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  border: 1px solid #e9edf3;
+  border-radius: 14px;
+  background: #fbfcfe;
+  transition: 0.2s ease;
+}
+
+.medicine-product:hover {
+  background: #ffffff;
+  border-color: #f0b8bb;
+  transform: translateY(-1px);
+}
+
+.medicine-product-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #fff5df;
+  font-size: 23px;
+}
+
+.medicine-product-info {
+  flex: 1;
+}
+
+.medicine-product-info h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.medicine-product-info p {
+  margin: 0 0 7px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.medicine-product-info strong {
+  color: #17233f;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+.medicine-cart {
+  position: sticky;
+  top: 20px;
+}
+
+.cart-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-count {
+  min-width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff0f1;
+  color: #ed1c24;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.cart-items {
+  display: grid;
+  gap: 5px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart-item-info strong {
+  font-size: 14px;
+}
+
+.cart-item-info span {
+  font-size: 11px;
+  color: #7a879b;
+}
+
+
+/* =========================================================
+   + / - QUANTITY
+========================================================= */
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border: 1px solid #e1e6ed;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.quantity-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background: #f3f5f8;
+  color: #17233f;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.quantity-button:hover {
+  background: #ed1c24;
+  color: #ffffff;
+}
+
+.quantity-number {
+  min-width: 23px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CART TOTAL
+========================================================= */
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e6eaf0;
+}
+
+.cart-total span {
+  color: #66748b;
+  font-size: 14px;
+}
+
+.cart-total strong {
+  color: #0b1736;
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+.cart-empty,
+.empty-state {
+  text-align: center;
+  padding: 35px 15px;
+  color: #718096;
+}
+
+.cart-empty>div,
+.empty-state>span {
+  font-size: 38px;
+}
+
+.cart-empty h3,
+.empty-state h3 {
+  color: #25324b;
+  margin: 10px 0 5px;
+}
+
+.cart-empty p,
+.empty-state p {
+  margin: 0;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .resq-page {
+    padding: 28px 20px 50px;
+  }
+
+  .medicine-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-cart {
+    position: static;
+  }
+
+  .route-card {
+    padding: 30px;
+    gap: 30px;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .page-hero {
+    align-items: flex-start;
+  }
+
+  .page-hero h1 {
+    font-size: 30px;
+  }
+
+  .route-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .route-visual {
+    height: 220px;
+  }
+
+  .ambulance-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ambulance-actions {
+    width: 100%;
+  }
+
+  .ambulance-actions button {
+    flex: 1;
+  }
+
+  .medicine-product {
+    align-items: flex-start;
+  }
+
+  .medicine-product .primary-button {
+    align-self: center;
+  }
+
+}

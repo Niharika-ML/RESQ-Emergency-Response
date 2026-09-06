@@ -1,0 +1,634 @@
+* {
+    box-sizing: border-box;
+}
+
+.emergency-route-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    color: #172033;
+    font-family: Inter, Arial, sans-serif;
+    padding-bottom: 50px;
+}
+
+/* HEADER */
+
+.emergency-route-header {
+    min-height: 78px;
+    background: white;
+    border-bottom: 1px solid #e8ebf1;
+    padding: 14px 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.emergency-back-btn {
+    border: 0;
+    background: #f3f5f8;
+    color: #344054;
+    padding: 11px 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.emergency-back-btn:hover {
+    background: #e8ebf0;
+}
+
+.emergency-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.emergency-title-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #eef3ff;
+    color: #4169e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emergency-title h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.emergency-title p {
+    margin: 3px 0 0;
+    color: #8a94a5;
+    font-size: 12px;
+}
+
+.call-108-btn {
+    background: #ef4444;
+    color: white;
+    text-decoration: none;
+    padding: 11px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* HERO */
+
+.emergency-route-hero {
+    margin: 30px 42px 0;
+    min-height: 360px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #172033, #2d3952);
+    color: white;
+    padding: 48px 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.emergency-hero-content {
+    max-width: 620px;
+}
+
+.route-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.emergency-hero-content h2 {
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.08;
+    margin: 18px 0 15px;
+    letter-spacing: -1.2px;
+}
+
+.emergency-hero-content h2 span {
+    color: #6fa3ff;
+}
+
+.emergency-hero-content p {
+    color: #c7cfdd;
+    line-height: 1.7;
+    max-width: 570px;
+    margin-bottom: 26px;
+}
+
+.hero-route-buttons {
+    display: flex;
+    gap: 11px;
+    flex-wrap: wrap;
+}
+
+.detect-location-btn,
+.nearest-hospital-btn {
+    border: 0;
+    padding: 13px 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.detect-location-btn {
+    background: #4169e1;
+    color: white;
+}
+
+.nearest-hospital-btn {
+    background: white;
+    color: #172033;
+}
+
+/* MAP VISUAL */
+
+.route-map-visual {
+    width: 390px;
+    height: 280px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #dfe7d8;
+}
+
+.map-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.7;
+    background-image:
+        linear-gradient(#ffffff 2px, transparent 2px),
+        linear-gradient(90deg, #ffffff 2px, transparent 2px);
+    background-size: 50px 50px;
+}
+
+.map-road {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 30px;
+}
+
+.road-one {
+    width: 500px;
+    height: 30px;
+    left: -70px;
+    top: 110px;
+    transform: rotate(25deg);
+}
+
+.road-two {
+    width: 500px;
+    height: 23px;
+    left: -40px;
+    top: 190px;
+    transform: rotate(-20deg);
+}
+
+.map-point {
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.user-point {
+    left: 70px;
+    top: 75px;
+    background: #4169e1;
+    color: white;
+}
+
+.hospital-point {
+    right: 70px;
+    bottom: 58px;
+    background: #ef4444;
+    color: white;
+}
+
+.point-pulse {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border: 2px solid rgba(65, 105, 225, 0.4);
+    border-radius: 50%;
+}
+
+.map-route-line {
+    position: absolute;
+    width: 200px;
+    height: 4px;
+    background: #4169e1;
+    left: 108px;
+    top: 112px;
+    transform: rotate(30deg);
+    border-radius: 5px;
+}
+
+.map-distance-card {
+    position: absolute;
+    left: 20px;
+    bottom: 17px;
+    background: white;
+    border-radius: 12px;
+    color: #172033;
+    padding: 11px 13px;
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.13);
+}
+
+.map-distance-card svg {
+    color: #4169e1;
+}
+
+.map-distance-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-distance-card strong {
+    font-size: 12px;
+}
+
+.map-distance-card span {
+    font-size: 9px;
+    color: #8a94a5;
+    margin-top: 3px;
+}
+
+/* SECTIONS */
+
+.current-location-section,
+.destination-section,
+.quick-route-section {
+    margin: 32px 42px 0;
+}
+
+.route-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.route-section-heading>div>span {
+    color: #8c96a7;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.route-section-heading h3 {
+    margin: 5px 0 0;
+    font-size: 22px;
+}
+
+.refresh-location-btn {
+    border: 1px solid #e0e4eb;
+    background: white;
+    color: #344054;
+    padding: 10px 14px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* LOCATION */
+
+.current-location-card {
+    background: white;
+    border: 1px solid #e7eaf0;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.current-location-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    background: #eef3ff;
+    color: #4169e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-location-info {
+    flex: 1;
+}
+
+.current-location-info strong {
+    font-size: 14px;
+}
+
+.location-coordinates {
+    display: flex;
+    gap: 20px;
+    color: #8992a4;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* DESTINATION CARDS */
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.destination-card {
+    background: white;
+    border: 1px solid #e7eaf0;
+    border-radius: 18px;
+    padding: 21px;
+    transition: 0.2s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(24, 36, 58, 0.07);
+}
+
+.destination-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.destination-icon {
+    width: 53px;
+    height: 53px;
+    border-radius: 14px;
+    background: #eef3ff;
+    color: #4169e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ambulance-destination .destination-icon {
+    background: #fff0f0;
+    color: #ef4444;
+}
+
+.pharmacy-destination .destination-icon {
+    background: #effaf4;
+    color: #1d9b5c;
+}
+
+.destination-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #9099a9;
+    letter-spacing: 0.7px;
+}
+
+.destination-card h4 {
+    margin: 18px 0 7px;
+    font-size: 17px;
+}
+
+.destination-card p {
+    color: #8992a4;
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 60px;
+    margin: 0;
+}
+
+.destination-meta {
+    border-top: 1px solid #edf0f4;
+    margin-top: 15px;
+    padding-top: 13px;
+}
+
+.destination-meta span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #727d8f;
+    font-size: 11px;
+}
+
+.destination-meta svg {
+    color: #4169e1;
+}
+
+.destination-card button {
+    margin-top: 16px;
+    width: 100%;
+    border: 0;
+    background: #4169e1;
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ambulance-destination button {
+    background: #ef4444;
+}
+
+.pharmacy-destination button {
+    background: #1d9b5c;
+}
+
+/* QUICK */
+
+.quick-route-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.quick-route-grid button,
+.quick-route-grid a {
+    background: white;
+    border: 1px solid #e7eaf0;
+    border-radius: 14px;
+    padding: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #344054;
+    cursor: pointer;
+    text-align: left;
+}
+
+.quick-route-grid button:hover,
+.quick-route-grid a:hover {
+    border-color: #4169e1;
+}
+
+.quick-route-grid button>div,
+.quick-route-grid a>div {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #eef3ff;
+    color: #4169e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quick-route-grid span {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-route-grid strong {
+    font-size: 12px;
+}
+
+.quick-route-grid small {
+    font-size: 9px;
+    color: #919aab;
+    margin-top: 3px;
+}
+
+.quick-route-grid svg:last-child {
+    color: #a0a8b7;
+}
+
+/* SAFETY */
+
+.route-safety {
+    margin: 30px 42px 0;
+    background: #fff9e8;
+    border: 1px solid #f8e5ae;
+    border-radius: 15px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: #805f00;
+}
+
+.route-safety>svg {
+    margin-top: 2px;
+}
+
+.route-safety strong {
+    font-size: 13px;
+}
+
+.route-safety p {
+    margin: 5px 0 0;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #92752a;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+    .emergency-route-hero {
+        padding: 38px;
+    }
+
+    .route-map-visual {
+        width: 320px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-route-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .emergency-route-header {
+        padding: 14px 18px;
+    }
+
+    .emergency-title {
+        display: none;
+    }
+
+    .call-108-btn {
+        margin-left: auto;
+    }
+
+    .emergency-route-hero {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+    .route-map-visual {
+        display: none;
+    }
+
+    .current-location-section,
+    .destination-section,
+    .quick-route-section,
+    .route-safety {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .destination-grid,
+    .quick-route-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .emergency-route-hero {
+        padding: 30px 24px;
+    }
+
+    .emergency-hero-content h2 {
+        font-size: 34px;
+    }
+
+    .location-coordinates {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .route-section-heading {
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
